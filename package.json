@@ -1,0 +1,12 @@
+{
+  "name": "pubnode",
+  "type": "module",
+  "scripts": {
+    "tailwind:watch": "npx tailwindcss -i ./assets/static/css/tailwind.css -o ./dist/styles.css --watch",
+    "tailwind:build": "npx tailwindcss -i ./assets/static/css/tailwind.css -o ./dist/styles.css"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.15"
+  }
+}
