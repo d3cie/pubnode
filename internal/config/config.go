@@ -10,6 +10,7 @@ type Config struct {
 	DatabaseDSN string
 	Dev         bool
 	Port        string
+	AssetPath   string
 }
 
 var cfg Config
@@ -21,6 +22,7 @@ func Init() {
 		DatabaseDSN: getEnv("DB_DSN", "./data/local.sqlite"),
 		Dev:         getEnv("DEV", "true") == "true",
 		Port:        getEnv("PORT", "3000"),
+		AssetPath:   getEnv("ASSET_PATH", "/pub"),
 	}
 }
 

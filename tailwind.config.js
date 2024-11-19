@@ -1,4 +1,4 @@
 export default {
   darkMode: ["class"],
-  content: ["./web/**/*.{html,js,ts,tsx,css}"],
+  content: ["./assets/templates/layouts/*.html", "./assets/templates/pages/*.html", "./assets/static/css/*.css"],
 };
