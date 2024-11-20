@@ -25,6 +25,10 @@ func (a *app) startServer() error {
 			"/pub",
 			"dist",
 		)
+		fiberApp.Static(
+			"/pub",
+			"assets/static",
+		)
 	}
 	fiberApp.Use(func(c *fiber.Ctx) error {
 		c.Locals("AssetPath", a.cfg.AssetPath)

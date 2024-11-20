@@ -1,6 +1,15 @@
 @layer components {
     .input {
-      @apply flex h-10 w-full rounded-lg border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 items-center
+      @apply flex w-full rounded-xl border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 items-center
+    }
+    .input.input-sm {
+      @apply h-8 text-sm
+    }
+    .input.input-md {
+      @apply h-9
+    }
+    .input.input-lg {
+      @apply h-10 text-lg
     }
   
     .button {
@@ -13,7 +22,7 @@
       @apply bg-red-500 text-white hover:bg-red-500/90
     }
     .button.btn-outline {
-      @apply border  bg-transparent hover:bg-gray-300 hover:text-gray-800
+      @apply border-gray-300 bg-transparent hover:bg-gray-200 shadow-sm
     }
     .button.btn-secondary {
       @apply bg-gray-200 text-gray-600 hover:bg-gray-200/80
@@ -30,6 +39,9 @@
     .button.btn-sm {
       @apply h-9 px-3
     }
+    .button.btn-md {
+        @apply h-10 px-3
+      }
     .button.btn-lg {
       @apply h-11 px-8
     }
@@ -47,14 +59,27 @@
       }
   
     .kbd {
-        @apply bg-orange-700 rounded-lg size-5 font-mono text-xs flex items-center justify-center leading-none
+        @apply bg-orange-700 rounded-lg font-mono text-xs flex items-center justify-center leading-none
+    }
+    .kbd.kbd-sm {
+        @apply size-4
+    }
+    .kbd.kbd-md {
+        @apply size-5
+    }
+    .kbd.kbd-lg {
+        @apply size-6
     }
 
     .text-muted {
         @apply text-gray-600
     }
     .text-secondary {
-        @apply text-gray-800
+        @apply text-gray-700
+    }
+
+    .a {
+        @apply text-orange-600 underline-offset-4 underline
     }
 
     .avatar {
@@ -74,5 +99,9 @@
     }
     .avatar > img {
         @apply rounded-full aspect-square object-contain text-xs
+    }
+
+    .tooltip {
+        @apply absolute z-50 whitespace-normal break-words rounded-lg bg-gray-900 py-1.5 px-3 text-sm font-normal text-white focus:outline-none
     }
   }

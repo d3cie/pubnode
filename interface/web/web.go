@@ -11,9 +11,13 @@ import (
 func SetupRoutes(app *fiber.App, logger *slog.Logger) {
 	homeController := controllers.HomeController{}
 	feedController := controllers.FeedController{}
+	postsController := controllers.PostsController{}
+	authController := controllers.AuthController{}
 
 	app.Use(loghttp.New(logger))
 
 	app.Get("/", homeController.Home_Get)
+	app.Get("/login", authController.Login_Get)
 	app.Get("/feed", feedController.Feed_Get)
+	app.Get("/create", postsController.Create_Get)
 }

@@ -1,39 +1,38 @@
 <div class="h-12 border-b w-full flex items-center p-2 font-semibold">
     Feed
 </div>
-<div class="p-4 gap-2 grid">
+<div class="p-4 gap-2 grid border-b">
     <div class="flex gap-2 items-center">
-        <div class="avatar avatar-md">
-            <img src="" alt="">
+        <div class="w-fit">
+            <div class="avatar avatar-md">
+                <img src="" alt="">
+            </div>
         </div>
         <input class="w-full" placeholder="What will you post today?" />
     </div>
-    <div class="flex">
-        <div class="flex gap-1">
-            <button class="button btn-icon-xs btn-ghost">
-                p
+    <div class="flex items-center ">
+        <div class="flex gap-1 flex-1">
+            <button class="button btn-icon-xs btn-ghost" title="Link">
+                <i class="hgi-stroke hgi-link-01"></i>
             </button>
-            <button class="button btn-icon-xs btn-ghost">
-                o
+            <button class="button btn-icon-xs btn-ghost" title="Photos">
+                <i class="hgi-stroke hgi-album-02"></i>
             </button>
-            <button class="button btn-icon-xs btn-ghost">
-                p
+            <button class="button btn-icon-xs btn-ghost" title="Poll">
+                <i class="hgi-stroke hgi-left-to-right-list-triangle"></i>
             </button>
-            <button class="button btn-icon-xs btn-ghost">
-                o
-            </button>
-            <button class="button btn-icon-xs btn-ghost">
-                l
+            <button class="button btn-icon-xs btn-ghost" title="Project">
+                <i class="hgi-stroke hgi-package"></i>
             </button>
         </div>
-        <div class="flex-1 items-end">
-            <button class="button btn-primary btn-xs w-fit">
-                Post
-                <kbd>
-                    Ctrl enter
-                </kbd>
-            </button>
-        </div>
+
+        <button class="button btn-primary btn-xs w-fit">
+            Post
+            <kbd class="kbd kbd-md w-fit px-2 -mr-1.5">
+                ctrl ↵
+            </kbd>
+        </button>
+
     </div>
 
 </div>
