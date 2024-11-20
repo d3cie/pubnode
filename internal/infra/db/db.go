@@ -1,6 +1,8 @@
 package db
 
 import (
+	"errors"
+
 	"github.com/glebarez/sqlite"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -23,4 +25,17 @@ func New(dsn string) (*DB, error) {
 		return nil, err
 	}
 	return &DB{db}, nil
+}
+
+func (db *DB) Tx() *DB {
+	return &DB{db.Begin()}
+}
+
+func (DB) IsErrUniqueConstraintViolation(err error, cols []string) bool {
+	panic("NOT IMPLEMENTED YET")
+	return false
+}
+
+func (DB) IsErrNotFound(err error) bool {
+	return errors.Is(err, gorm.ErrRecordNotFound)
 }
