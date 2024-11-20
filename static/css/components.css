@@ -13,7 +13,7 @@
     }
   
     .button {
-      @apply rounded-xl inline-flex w-full gap-2 border items-center leading-none justify-center duration-75 active:translate-y-[2px] border-transparent whitespace-nowrap text-sm font-medium  disabled:pointer-events-none disabled:opacity-50
+      @apply rounded-xl inline-flex w-full gap-2 border items-center leading-none justify-center duration-75 active:translate-y-[1px] border-transparent whitespace-nowrap text-sm font-medium  disabled:pointer-events-none disabled:opacity-50
     }
     .button.btn-primary {
       @apply transition-shadow bg-gradient-to-b from-orange-500 to-orange-600 hover:bg-gradient-to-b border-orange-600 hover:shadow-md text-white

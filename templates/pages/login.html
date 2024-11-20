@@ -2,18 +2,18 @@
     class="h-full gap-6 lg:gap-16 md:p-6 p-0 relative overflow-hidden flex-row sm:items-center sm:justify-center pt-[10%] border-primary sm:pt-0">
     <div class="flex z-10 items-center justify-center flex-col p-3 sm:p-4">
         <div class="flex gap-2 mb-4 items-center text-foreground">
-            <img src="{{ .AssetPath }}/img/logo-full.svg" class="h-8" alt="Pubnode">
+            <img src="{{ .Config.AssetPath }}/img/logo-full.svg" class="h-8" alt="Pubnode">
         </div>
         <div
             class="bg-gray-50 rounded-2xl border shadow-sm py-4 sm:max-w-[28rem] sm:w-[28rem] w-full px-4 flex flex-col gap-6">
             <div class="flex flex-col space-y-0 text-center items-center">
                 <h1 class="tracking-tight text-xl font-semibold text-foreground font-serif">
-                    Login to your account
+                    Welcome back!
                 </h1>
-                <p class="text-sm text-secondary">continue with your email address or Google.</p>
+                <p class="text-sm text-secondary">continue with your email address or Github.</p>
             </div>
 
-            <form>
+            <form hx-post="/login" hx-target="#error" hx-indicator="#submit-button" hx-disabled-elt="#submit-button">
                 <div class="grid gap-2">
                     <input-group class="grid gap-3">
                         <div class="grid gap-1">
@@ -28,11 +28,14 @@
                         </div>
                     </input-group>
                     <div class="relative ml-1 -mb-5">
-                        <p id="error" class="text-sm h-5 text-left text-destructive">
+                        <p id="error" class="text-sm h-5 text-left text-red-600">
                         </p>
                     </div>
-                    <button type="submit" class="mt-6 shadow-sm button btn-md btn-primary">
+                    <button type="submit" id="submit-button" class="mt-6 shadow-sm button btn-md btn-primary group">
                         continue with email
+                        <i class="hgi-stroke hgi-arrow-right-02 group-[.htmx-request]:hidden"></i>
+                        <i
+                            class="hgi-stroke hgi-loading-03 hidden group-[.htmx-request]:block animate-spin duration-200"></i>
                     </button>
                 </div>
             </form>

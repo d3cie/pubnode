@@ -18,6 +18,7 @@ func SetupRoutes(app *fiber.App, logger *slog.Logger) {
 
 	app.Get("/", homeController.Home_Get)
 	app.Get("/login", authController.Login_Get)
+	app.Post("/login", authController.Login_Post)
 	app.Get("/feed", feedController.Feed_Get)
 	app.Get("/create", postsController.Create_Get)
 }

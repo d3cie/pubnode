@@ -11,6 +11,7 @@ type Config struct {
 	Dev         bool
 	Port        string
 	AssetPath   string
+	AppVersion  string
 }
 
 var cfg Config
@@ -23,6 +24,7 @@ func Init() {
 		Dev:         getEnv("DEV", "true") == "true",
 		Port:        getEnv("PORT", "3000"),
 		AssetPath:   getEnv("ASSET_PATH", "/pub"),
+		AppVersion:  "0.0.1",
 	}
 }
 

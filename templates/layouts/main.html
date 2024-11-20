@@ -2,7 +2,7 @@
     <div class="max-w-screen-lg w-full h-screen flex">
         <aside class="min-w-64 border-r h-full flex flex-col p-2 gap-4 pt-6">
             <div class="w-full">
-                <img src="{{ .AssetPath }}/img/logo-full.svg" class="h-8" alt="Pubnode">
+                <img src="{{ .Config.AssetPath }}/img/logo-full.svg" class="h-8" alt="Pubnode">
             </div>
             <nav>
                 <a href="/post" class="button btn-primary btn-sm gap-2 justify-start">
@@ -53,7 +53,7 @@
                 </div>
 
                 <span class="text-xs text-muted">
-                    @pubnode v{{.AppVersion}}
+                    @pubnode v{{.Config.AppVersion}}
                 </span>
             </div>
         </aside>
