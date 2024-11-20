@@ -1,0 +1,67 @@
+<div class="flex justify-center">
+    <div class="max-w-screen-lg w-full h-screen flex">
+        <aside class="min-w-64 border-r h-full flex flex-col p-2 gap-4">
+            <div class="h-8 bg-gray-200 rounded-md px-2 font-serif font-semibold text-lg">
+
+            </div>
+            <nav>
+                <a href="/post" class="button btn-primary btn-sm gap-2 justify-start">
+                    <i class="hgi-stroke hgi-add-01"></i>
+                    <span class="flex-1">
+                        Post
+                    </span>
+
+                    <kbd class="kbd -mr-1.5">
+                        N
+                    </kbd>
+                </a>
+            </nav>
+            <nav class="flex flex-col gap-0.5">
+                <a href="/feed" id="feed-link"
+                    class="button btn-ghost btn-sm gap-2 justify-start {{if eq .ActiveRoute `feed`}}font-semibold{{end}}">
+                    <i class="hgi-stroke hgi-home-01"></i>Feed
+                </a>
+                <a href="/projects" id="projects-link"
+                    class="button btn-ghost btn-sm gap-2 justify-start {{if eq .ActiveRoute `projects`}}font-semibold{{end}}">
+                    <i class="hgi-stroke hgi-rocket-01"></i>Projects
+                </a>
+                <a href="/inbox" id="inbox-link"
+                    class="button btn-ghost btn-sm gap-2 justify-start {{if eq .ActiveRoute `inbox`}}font-semibold{{end}}">
+                    <i class="hgi-stroke hgi-inbox"></i>Inbox
+                </a>
+                <a href="/search" id="search-link"
+                    class="button btn-ghost btn-sm gap-2 justify-start {{if eq .ActiveRoute `search`}}font-semibold{{end}}">
+                    <i class="hgi-stroke hgi-search-02"></i>Search
+                </a>
+            </nav>
+            <div class="flex flex-1 justify-end flex-col gap-2">
+                <div class="flex gap-2 items-center">
+                    <div class="rounded-full border size-7">
+                        <img src="{{.User.Avatar}}" alt="@{{.User.Username}}"
+                            class="rounded-full aspect-square object-contain text-xs">
+                    </div>
+                    <div>
+                        <div class="text-sm">
+                            @{{.User.Username}}
+                        </div>
+                        <div class="text-xs text-muted">
+                            <span class="font-semibold">1</span> follower(s)
+                            •
+                            <span class="font-semibold">1</span> following
+                        </div>
+                    </div>
+                </div>
+
+                <span class="text-xs text-muted">
+                    @pubnode v{{.AppVersion}}
+                </span>
+            </div>
+        </aside>
+        <main class="w-full">
+            {{embed}}
+        </main>
+        <aside class="min-w-64 border-l h-full">
+            other aside
+        </aside>
+    </div>
+</div>

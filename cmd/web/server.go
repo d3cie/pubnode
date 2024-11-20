@@ -9,8 +9,11 @@ import (
 func (a *app) startServer() error {
 	a.logger.Info("starting server on port " + a.cfg.Port)
 
+	//TODO: use embed instead of static
+	engine := html.New("templates", ".html")
+
 	fiberApp := fiber.New(fiber.Config{
-		Views:                   html.New("assets/templates", ".html"),
+		Views:                   engine,
 		ViewsLayout:             "layouts/root",
 		EnableTrustedProxyCheck: true,
 		PassLocalsToViews:       true,
@@ -25,6 +28,8 @@ func (a *app) startServer() error {
 	}
 	fiberApp.Use(func(c *fiber.Ctx) error {
 		c.Locals("AssetPath", a.cfg.AssetPath)
+		//TODO: get the version from the proper place?
+		c.Locals("AppVersion", "0.0.1")
 		return c.Next()
 	})
 

@@ -10,8 +10,10 @@ import (
 
 func SetupRoutes(app *fiber.App, logger *slog.Logger) {
 	homeController := controllers.HomeController{}
+	feedController := controllers.FeedController{}
 
 	app.Use(loghttp.New(logger))
 
 	app.Get("/", homeController.Home_Get)
+	app.Get("/feed", feedController.Feed_Get)
 }

@@ -1,3 +1,78 @@
 @layer components {
-        
-}
+    .input {
+      @apply flex h-10 w-full rounded-lg border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 items-center
+    }
+  
+    .button {
+      @apply rounded-xl inline-flex w-full gap-2 border items-center leading-none justify-center duration-75 active:translate-y-[2px] border-transparent whitespace-nowrap text-sm font-medium  disabled:pointer-events-none disabled:opacity-50
+    }
+    .button.btn-primary {
+      @apply transition-shadow bg-gradient-to-b from-orange-500 to-orange-600 hover:bg-gradient-to-b border-orange-600 hover:shadow-md text-white
+    }
+    .button.btn-destructive {
+      @apply bg-red-500 text-white hover:bg-red-500/90
+    }
+    .button.btn-outline {
+      @apply border  bg-transparent hover:bg-gray-300 hover:text-gray-800
+    }
+    .button.btn-secondary {
+      @apply bg-gray-200 text-gray-600 hover:bg-gray-200/80
+    }
+    .button.btn-ghost {
+      @apply hover:bg-gray-200 
+    }
+    .button.btn-link {
+      @apply text-orange-600 underline-offset-4 hover:underline
+    }
+    .button.btn-xs {
+        @apply h-8 px-3
+      }
+    .button.btn-sm {
+      @apply h-9 px-3
+    }
+    .button.btn-lg {
+      @apply h-11 px-8
+    }
+    .button.btn-icon-xs {
+        @apply h-7 w-7
+    }
+    .button.btn-icon-sm {
+        @apply h-9 w-9
+    }
+    .button.btn-icon-md {
+      @apply h-10 w-10
+    }
+    .button.btn-icon-lg {
+        @apply h-11 w-11
+      }
+  
+    .kbd {
+        @apply bg-orange-700 rounded-lg size-5 font-mono text-xs flex items-center justify-center leading-none
+    }
+
+    .text-muted {
+        @apply text-gray-600
+    }
+    .text-secondary {
+        @apply text-gray-800
+    }
+
+    .avatar {
+        @apply rounded-full border
+    }
+    .avatar.avatar-xs {
+        @apply size-4
+    }
+    .avatar.avatar-sm {
+        @apply size-7
+    }
+    .avatar.avatar-md {
+        @apply size-10
+    }
+    .avatar.avatar-lg {
+        @apply size-14
+    }
+    .avatar > img {
+        @apply rounded-full aspect-square object-contain text-xs
+    }
+  }
