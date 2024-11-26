@@ -21,7 +21,7 @@ func main() {
 	cfg := config.Get()
 
 	logger := slog.New(tint.NewHandler(os.Stdout, &tint.Options{Level: utils.Ternary(cfg.Dev, slog.LevelDebug, slog.LevelInfo)}))
-	db, err := db.New(cfg.DatabaseDSN)
+	db, err := db.New()
 	if err != nil {
 		logger.Error("failed to initialize database", slog.String("error", err.Error()))
 		os.Exit(1)

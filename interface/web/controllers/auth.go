@@ -1,8 +1,6 @@
 package controllers
 
 import (
-	"time"
-
 	"github.com/gofiber/fiber/v2"
 )
 
@@ -19,6 +17,18 @@ func (c *AuthController) Login_Get(ctx *fiber.Ctx) error {
 }
 
 func (c *AuthController) Login_Post(ctx *fiber.Ctx) error {
-	time.Sleep(4 * time.Second)
+	return ctx.SendString("error example")
+}
+
+func (c *AuthController) Register_Get(ctx *fiber.Ctx) error {
+	return ctx.Render("pages/register", fiber.Map{
+		"Meta": fiber.Map{
+			"Title":       "Register on Pubnode",
+			"Description": "Register to continue",
+		},
+	}, "layouts/root")
+}
+
+func (c *AuthController) Register_Post(ctx *fiber.Ctx) error {
 	return ctx.SendString("error example")
 }

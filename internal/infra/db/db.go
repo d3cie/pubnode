@@ -3,17 +3,25 @@ package db
 import (
 	"errors"
 
-	"github.com/glebarez/sqlite"
+	"github.com/d3cie/pubnode/internal/config"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
+
+	_ "github.com/tursodatabase/libsql-client-go/libsql"
 )
 
 type DB struct {
 	*gorm.DB
 }
 
-func New(dsn string) (*DB, error) {
-	db, err := gorm.Open(sqlite.Open("./data/local.sqlite"), &gorm.Config{
+func New() (*DB, error) {
+	cfg := config.Get()
+
+	db, err := gorm.Open(sqlite.New(sqlite.Config{
+		DriverName: "libsql",
+		DSN:        cfg.DBDSN,
+	}), &gorm.Config{
 		Logger: logger.Discard,
 	})
 	if err != nil {

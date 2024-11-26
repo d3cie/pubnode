@@ -51,6 +51,8 @@ func (a *app) startServer() error {
 	fiberApp.Get("/", homeController.Home_Get)
 	fiberApp.Get("/login", authController.Login_Get)
 	fiberApp.Post("/login", authController.Login_Post)
+	fiberApp.Get("/register", authController.Register_Get)
+	fiberApp.Post("/register", authController.Register_Post)
 	fiberApp.Get("/feed", feedController.Feed_Get)
 	fiberApp.Get("/post/new", postsController.NewPost_Get)
 

@@ -7,7 +7,8 @@ import (
 )
 
 type Config struct {
-	DatabaseDSN  string
+	DBDSN        string
+	DBAuthToken  string
 	Dev          bool
 	Port         string
 	AssetPath    string
@@ -21,9 +22,10 @@ func Init() {
 	godotenv.Load(".env")
 
 	cfg = Config{
-		DatabaseDSN:  getEnv("DB_DSN", "./data/local.sqlite"),
+		DBDSN:        getEnv("DB_DSN", "./data/local.sqlite"),
+		DBAuthToken:  getEnv("DB_AUTH_TOKEN", ""),
 		Dev:          getEnv("DEV", "true") == "true",
-		Port:         getEnv("PORT", "3000"),
+		Port:         getEnv("PORT", "42069"),
 		AssetPath:    getEnv("ASSET_PATH", "/pub"),
 		CookieSecret: getEnv("COOKIE_SECRET", "h4T!9w@x*L2zR7P$M1vQ8yN"),
 		AppVersion:   "0.0.1",
