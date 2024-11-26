@@ -32,6 +32,20 @@ type authService struct {
 	logger *slog.Logger
 }
 
-func New() AuthService {
-	return &authService{}
+func New(
+	uowProvider repository.UOWProvider,
+
+	userRepository userrepository.UserRepository,
+	sessionRepository sessionrepository.SessionRepository,
+
+	logger *slog.Logger,
+) AuthService {
+	return &authService{
+		uowProvider: uowProvider,
+
+		userRepository:    userRepository,
+		sessionRepository: sessionRepository,
+
+		logger: logger.With("service", "authservice"),
+	}
 }

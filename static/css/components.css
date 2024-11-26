@@ -1,6 +1,6 @@
 @layer components {
     .input {
-      @apply flex w-full rounded-xl border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 items-center
+      @apply flex w-full rounded-xl border bg-transparent px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50
     }
     .input.input-sm {
       @apply h-8 text-sm
@@ -12,6 +12,10 @@
       @apply h-10 text-lg
     }
   
+    .textarea {
+      @apply flex w-full rounded-xl border bg-transparent px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50 resize-none 
+    }
+
     .button {
       @apply rounded-xl inline-flex w-full gap-2 border items-center leading-none justify-center duration-75 active:translate-y-[1px] border-transparent whitespace-nowrap text-sm font-medium  disabled:pointer-events-none disabled:opacity-50
     }
@@ -34,7 +38,7 @@
       @apply text-orange-600 underline-offset-4 hover:underline
     }
     .button.btn-xs {
-        @apply h-8 px-3
+        @apply h-7 px-3 text-sm
       }
     .button.btn-sm {
       @apply h-9 px-3

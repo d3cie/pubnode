@@ -17,7 +17,7 @@ func New(logger *slog.Logger) fiber.Handler {
 		requestAttrs := slog.Group("request", slog.String("method", c.Method()), slog.String("path", c.Path()))
 		responseAttrs := slog.Group("repsonse", slog.Int("status", c.Response().StatusCode()), slog.String("duration", fmt.Sprintf("%dms", -time.Until(start).Milliseconds())))
 
-		logger.Info("http", userAttrs, requestAttrs, responseAttrs)
+		logger.Info("HTTP", userAttrs, requestAttrs, responseAttrs)
 		return err
 	}
 }

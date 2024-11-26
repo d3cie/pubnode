@@ -1,0 +1,44 @@
+<main class="w-full flex flex-col">
+    <div class="h-12 border-b w-full flex items-center p-2 font-semibold gap-2">
+        <button class="button btn-icon-xs btn-secondary" title="Back">
+            <i class="hgi-stroke hgi-arrow-left-01"></i>
+        </button>
+        Create post
+    </div>
+
+    <div class="w-full flex flex-col gap-2 h-full pt-2">
+        <div class="flex w-full gap-2 bg-gradient-to-b from-gray-50 to-transparent p-2 hidden">
+            <button class="button btn-xs {{if eq .Type `text`}} btn-outline !bg-white {{ else }} btn-ghost {{ end }}">
+                <i class="hgi-stroke hgi-text-font"></i>Text
+            </button>
+            <button
+                class="button btn-xs btn-ghost {{if eq .Type `images`}} btn-outline bg-white {{ else }} btn-ghost {{ end }}">
+                <i class="hgi-stroke hgi-album-02"></i>Images
+            </button>
+            <button
+                class="button btn-xs btn-ghost {{if eq .Type `link`}} btn-outline !bg-white {{ else }} btn-ghost {{ end }}">
+                <i class="hgi-stroke hgi-link-01"></i>Link
+            </button>
+            <button
+                class="button btn-xs btn-ghost {{if eq .Type `poll`}} btn-outline !bg-white {{ else }} btn-ghost {{ end }}">
+                <i class="hgi-stroke hgi-left-to-right-list-triangle"></i>Poll
+            </button>
+            <button
+                class="button btn-xs btn-ghost {{if eq .Type `project`}} btn-outline !bg-white {{ else }} btn-ghost {{ end }}">
+                <i class="hgi-stroke hgi-package"></i>Project
+            </button>
+        </div>
+        {{embed}}
+    </div>
+    <div class="h-12 border-t w-full flex p-2 font-semibold gap-2 justify-end">
+        <button class="button btn-xs btn-secondary w-fit">
+            Cancel
+        </button>
+        <button class="button btn-xs btn-primary w-fit">
+            Post
+        </button>
+    </div>
+</main>
+<aside class="min-w-64 border-l h-full">
+    other aside
+</aside>

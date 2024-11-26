@@ -19,3 +19,10 @@ type sessionRepository struct {
 	logger *slog.Logger
 	db     *db.DB
 }
+
+func New(db *db.DB, logger *slog.Logger) SessionRepository {
+	return &sessionRepository{
+		db:     db,
+		logger: logger.With("repository", "sessionrepository"),
+	}
+}

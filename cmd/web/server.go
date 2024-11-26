@@ -3,7 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/d3cie/pubnode/interface/web"
+	"github.com/d3cie/pubnode/interface/web/controllers"
+	"github.com/d3cie/pubnode/interface/web/middleware/loghttp"
 	"github.com/d3cie/pubnode/templates"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
@@ -40,7 +41,18 @@ func (a *app) startServer() error {
 		return c.Next()
 	})
 
-	web.SetupRoutes(fiberApp, a.logger)
+	homeController := controllers.HomeController{}
+	feedController := controllers.FeedController{}
+	postsController := controllers.PostsController{}
+	authController := controllers.AuthController{}
+
+	fiberApp.Use(loghttp.New(a.logger))
+
+	fiberApp.Get("/", homeController.Home_Get)
+	fiberApp.Get("/login", authController.Login_Get)
+	fiberApp.Post("/login", authController.Login_Post)
+	fiberApp.Get("/feed", feedController.Feed_Get)
+	fiberApp.Get("/post/new", postsController.NewPost_Get)
 
 	return fiberApp.Listen(":" + a.cfg.Port)
 }

@@ -1,38 +1,55 @@
-<div class="h-12 border-b w-full flex items-center p-2 font-semibold">
-    Feed
-</div>
-<div class="p-4 gap-2 grid border-b">
-    <div class="flex gap-2 items-center">
-        <div class="w-fit">
-            <div class="avatar avatar-md">
-                <img src="" alt="">
+<div class="w-full flex flex-col">
+    <div class="h-12 border-b w-full flex items-center p-2 font-semibold justify-around">
+        <span>
+            Feed
+        </span>
+        <div class="border rounded-xl flex p-0.5">
+            <button class="button btn-xs btn-ghost !h-6">
+                NEWEST
+            </button>
+            <button class="button btn-xs btn-ghost !h-6">
+                TRENDING
+            </button>
+            <button class="button btn-xs btn-ghost !h-6">
+                FOLLOWING
+            </button>
+        </div>
+        <div>
+
+        </div>
+
+    </div>
+    <div class="p-4 gap-2 grid border-b w-full">
+        <div class="flex gap-2 items-center">
+            <div class="w-fit">
+                <div class="avatar avatar-md">
+                    <img src="" alt="">
+                </div>
             </div>
+            <input class="w-full" placeholder="What will you post today?" />
         </div>
-        <input class="w-full" placeholder="What will you post today?" />
-    </div>
-    <div class="flex items-center ">
-        <div class="flex gap-1 flex-1">
-            <button class="button btn-icon-xs btn-ghost" title="Link">
-                <i class="hgi-stroke hgi-link-01"></i>
-            </button>
-            <button class="button btn-icon-xs btn-ghost" title="Photos">
-                <i class="hgi-stroke hgi-album-02"></i>
-            </button>
-            <button class="button btn-icon-xs btn-ghost" title="Poll">
-                <i class="hgi-stroke hgi-left-to-right-list-triangle"></i>
-            </button>
-            <button class="button btn-icon-xs btn-ghost" title="Project">
-                <i class="hgi-stroke hgi-package"></i>
+        <div class="flex items-center ">
+            <div class="flex gap-1 flex-1">
+                <button class="button btn-icon-xs btn-ghost" title="Link">
+                    <i class="hgi-stroke hgi-link-01"></i>
+                </button>
+                <button class="button btn-icon-xs btn-ghost" title="Photos">
+                    <i class="hgi-stroke hgi-album-02"></i>
+                </button>
+                <button class="button btn-icon-xs btn-ghost" title="Poll">
+                    <i class="hgi-stroke hgi-left-to-right-list-triangle"></i>
+                </button>
+                <button class="button btn-icon-xs btn-ghost" title="Project">
+                    <i class="hgi-stroke hgi-package"></i>
+                </button>
+            </div>
+
+            <button class="button btn-primary btn-xs w-fit">
+                Post
             </button>
         </div>
-
-        <button class="button btn-primary btn-xs w-fit">
-            Post
-            <kbd class="kbd kbd-md w-fit px-2 -mr-1.5">
-                ctrl ↵
-            </kbd>
-        </button>
-
     </div>
-
 </div>
+<aside class="min-w-64 border-l h-full">
+    other aside
+</aside>

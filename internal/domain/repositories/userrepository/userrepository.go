@@ -22,6 +22,9 @@ type userRepository struct {
 	db     *db.DB
 }
 
-func New() UserRepository {
-	return &userRepository{}
+func New(db *db.DB, logger *slog.Logger) UserRepository {
+	return &userRepository{
+		db:     db,
+		logger: logger.With("repository", "userrepository"),
+	}
 }

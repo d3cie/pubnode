@@ -1,0 +1,27 @@
+<div class="p-2 px-4 gap-3 h-full">
+    <div class="grid gap-1">
+        <label for="title" class="text-sm ml-2">Title</label>
+        <input id="title" name="title" class="input input-md" minlength=3 maxlength=300 required />
+        <div id="title-length-display" class="flex text-sm w-full text-muted justify-end px-2">0/300</div>
+    </div>
+
+    <div class="grid gap-1">
+        <label for="body" class="text-sm ml-2">Body</label>
+        <textarea id="body" name="body" class="textarea" minlength=3 maxlength=40000 required rows="5"></textarea>
+        <label class="italic text-muted-foreground leading-4 text-xs ml-1 flex" for="body">
+            <span class="flex items-center gap-0.5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 208 128">
+                    <rect width="198" height="118" x="5" y="5" ry="10" stroke="#000" stroke-width="10" fill="none" />
+                    <path d="M30 98V30h20l20 25 20-25h20v68H90V59L70 84 50 59v39zm125 0l-30-33h20V30h20v35h20z" />
+                </svg> markdown supported</span>.
+        </label>
+    </div>
+</div>
+
+<script>
+    const titleLengthDisplay = document.getElementById("title-length-display")
+    document.getElementById("title").addEventListener("input", (e) => {
+        const fieldLength = e.target?.value.length
+        titleLengthDisplay.innerText = `${fieldLength}/300`
+    })
+</script>
