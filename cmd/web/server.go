@@ -56,5 +56,10 @@ func (a *app) startServer() error {
 	fiberApp.Get("/feed", feedController.Feed_Get)
 	fiberApp.Get("/post/new", postsController.NewPost_Get)
 
+	fiberApp.Use("/health", func(c *fiber.Ctx) error {
+		return c.SendString("OK")
+	})
+
 	return fiberApp.Listen(":" + a.cfg.Port)
+
 }
